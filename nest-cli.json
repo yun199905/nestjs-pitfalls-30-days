@@ -1,0 +1,275 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/nestjs-pitfalls-30-days/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/nestjs-pitfalls-30-days/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/nestjs-pitfalls-30-days",
+  "projects": {
+    "day-02-provider-dependency": {
+      "type": "application",
+      "root": "apps/day-02-provider-dependency",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-02-provider-dependency/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-02-provider-dependency/tsconfig.app.json"
+      }
+    },
+    "day-03-circular-dependency": {
+      "type": "application",
+      "root": "apps/day-03-circular-dependency",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-03-circular-dependency/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-03-circular-dependency/tsconfig.app.json"
+      }
+    },
+    "day-04-for-root-async": {
+      "type": "application",
+      "root": "apps/day-04-for-root-async",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-04-for-root-async/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-04-for-root-async/tsconfig.app.json"
+      }
+    },
+    "day-05-dynamic-route": {
+      "type": "application",
+      "root": "apps/day-05-dynamic-route",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-05-dynamic-route/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-05-dynamic-route/tsconfig.app.json"
+      }
+    },
+    "day-06-cors": {
+      "type": "application",
+      "root": "apps/day-06-cors",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-06-cors/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-06-cors/tsconfig.app.json"
+      }
+    },
+    "day-07-validation-pipe-body": {
+      "type": "application",
+      "root": "apps/day-07-validation-pipe-body",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-07-validation-pipe-body/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-07-validation-pipe-body/tsconfig.app.json"
+      }
+    },
+    "day-08-boolean-transform": {
+      "type": "application",
+      "root": "apps/day-08-boolean-transform",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-08-boolean-transform/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-08-boolean-transform/tsconfig.app.json"
+      }
+    },
+    "day-09-whitelist-forbid-non-whitelisted": {
+      "type": "application",
+      "root": "apps/day-09-whitelist-forbid-non-whitelisted",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-09-whitelist-forbid-non-whitelisted/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-09-whitelist-forbid-non-whitelisted/tsconfig.app.json"
+      }
+    },
+    "day-10-nested-dto-validation": {
+      "type": "application",
+      "root": "apps/day-10-nested-dto-validation",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-10-nested-dto-validation/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-10-nested-dto-validation/tsconfig.app.json"
+      }
+    },
+    "day-11-query-param-array": {
+      "type": "application",
+      "root": "apps/day-11-query-param-array",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-11-query-param-array/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-11-query-param-array/tsconfig.app.json"
+      }
+    },
+    "day-12-array-dto-validation": {
+      "type": "application",
+      "root": "apps/day-12-array-dto-validation",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-12-array-dto-validation/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-12-array-dto-validation/tsconfig.app.json"
+      }
+    },
+    "day-13-typeorm-entities": {
+      "type": "application",
+      "root": "apps/day-13-typeorm-entities",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-13-typeorm-entities/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-13-typeorm-entities/tsconfig.app.json"
+      }
+    },
+    "day-14-typeorm-for-feature": {
+      "type": "application",
+      "root": "apps/day-14-typeorm-for-feature",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-14-typeorm-for-feature/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-14-typeorm-for-feature/tsconfig.app.json"
+      }
+    },
+    "day-15-one-to-many-relation": {
+      "type": "application",
+      "root": "apps/day-15-one-to-many-relation",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-15-one-to-many-relation/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-15-one-to-many-relation/tsconfig.app.json"
+      }
+    },
+    "day-16-lazy-loading-n-plus-one": {
+      "type": "application",
+      "root": "apps/day-16-lazy-loading-n-plus-one",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-16-lazy-loading-n-plus-one/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-16-lazy-loading-n-plus-one/tsconfig.app.json"
+      }
+    },
+    "day-17-config-init-order": {
+      "type": "application",
+      "root": "apps/day-17-config-init-order",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-17-config-init-order/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-17-config-init-order/tsconfig.app.json"
+      }
+    },
+    "day-18-transaction-rollback": {
+      "type": "application",
+      "root": "apps/day-18-transaction-rollback",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-18-transaction-rollback/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-18-transaction-rollback/tsconfig.app.json"
+      }
+    },
+    "day-19-request-lifecycle": {
+      "type": "application",
+      "root": "apps/day-19-request-lifecycle",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-19-request-lifecycle/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-19-request-lifecycle/tsconfig.app.json"
+      }
+    },
+    "day-20-config-outside-di": {
+      "type": "application",
+      "root": "apps/day-20-config-outside-di",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-20-config-outside-di/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-20-config-outside-di/tsconfig.app.json"
+      }
+    },
+    "day-21-env-joi-validation": {
+      "type": "application",
+      "root": "apps/day-21-env-joi-validation",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-21-env-joi-validation/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-21-env-joi-validation/tsconfig.app.json"
+      }
+    },
+    "day-22-multi-env-config": {
+      "type": "application",
+      "root": "apps/day-22-multi-env-config",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-22-multi-env-config/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-22-multi-env-config/tsconfig.app.json"
+      }
+    },
+    "day-23-multer-file-upload": {
+      "type": "application",
+      "root": "apps/day-23-multer-file-upload",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-23-multer-file-upload/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-23-multer-file-upload/tsconfig.app.json"
+      }
+    },
+    "day-24-swagger-api-property": {
+      "type": "application",
+      "root": "apps/day-24-swagger-api-property",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-24-swagger-api-property/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-24-swagger-api-property/tsconfig.app.json"
+      }
+    },
+    "day-25-swagger-jwt-bearer": {
+      "type": "application",
+      "root": "apps/day-25-swagger-jwt-bearer",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-25-swagger-jwt-bearer/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-25-swagger-jwt-bearer/tsconfig.app.json"
+      }
+    },
+    "day-26-json-stringify-entity-cycle": {
+      "type": "application",
+      "root": "apps/day-26-json-stringify-entity-cycle",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-26-json-stringify-entity-cycle/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-26-json-stringify-entity-cycle/tsconfig.app.json"
+      }
+    },
+    "day-27-docker-dist-permission": {
+      "type": "application",
+      "root": "apps/day-27-docker-dist-permission",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-27-docker-dist-permission/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-27-docker-dist-permission/tsconfig.app.json"
+      }
+    },
+    "day-28-unhandled-promise-reject": {
+      "type": "application",
+      "root": "apps/day-28-unhandled-promise-reject",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-28-unhandled-promise-reject/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-28-unhandled-promise-reject/tsconfig.app.json"
+      }
+    },
+    "day-29-typeorm-synchronize-risk": {
+      "type": "application",
+      "root": "apps/day-29-typeorm-synchronize-risk",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-29-typeorm-synchronize-risk/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-29-typeorm-synchronize-risk/tsconfig.app.json"
+      }
+    },
+    "nestjs-pitfalls-30-days": {
+      "type": "application",
+      "root": "apps/nestjs-pitfalls-30-days",
+      "entryFile": "main",
+      "sourceRoot": "apps/nestjs-pitfalls-30-days/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nestjs-pitfalls-30-days/tsconfig.app.json"
+      }
+    }
+  }
+}
