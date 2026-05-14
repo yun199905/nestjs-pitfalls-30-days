@@ -4,6 +4,7 @@
   "sourceRoot": "apps/nestjs-pitfalls-30-days/src",
   "compilerOptions": {
     "deleteOutDir": true,
+    "builder": "swc",
     "webpack": true,
     "tsConfigPath": "apps/nestjs-pitfalls-30-days/tsconfig.app.json"
   },
