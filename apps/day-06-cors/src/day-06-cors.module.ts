@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
-import { Day06CorsController } from './day-06-cors.controller';
-import { Day06CorsService } from './day-06-cors.service';
+import { PostController } from './post/post.controller';
+import { PostService } from './post/post.service';
+import { UserController } from './user/user.controller';
+import { UserService } from './user/user.service';
 
 @Module({
   imports: [],
-  controllers: [Day06CorsController],
-  providers: [Day06CorsService],
+  controllers: [PostController, UserController],
+  providers: [PostService, UserService],
 })
 export class Day06CorsModule {}

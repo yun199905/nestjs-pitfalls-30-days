@@ -1,22 +1,46 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { Day06CorsController } from './day-06-cors.controller';
-import { Day06CorsService } from './day-06-cors.service';
+import { PostController } from './post/post.controller';
+import { PostService } from './post/post.service';
+import { UserController } from './user/user.controller';
+import { UserService } from './user/user.service';
 
-describe('Day06CorsController', () => {
-  let day06CorsController: Day06CorsController;
+describe('Day06CorsControllers', () => {
+  let postController: PostController;
+  let userController: UserController;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
-      controllers: [Day06CorsController],
-      providers: [Day06CorsService],
+      controllers: [PostController, UserController],
+      providers: [PostService, UserService],
     }).compile();
 
-    day06CorsController = app.get<Day06CorsController>(Day06CorsController);
+    postController = app.get<PostController>(PostController);
+    userController = app.get<UserController>(UserController);
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(day06CorsController.getHello()).toBe('Hello World!');
+  it('returns a fixed current user profile', () => {
+    expect(userController.getCurrentUser()).toEqual({
+      id: 'user-1',
+      name: 'Cors Demo User',
+      role: 'author',
+      note: 'Pretend this profile is fetched with a cookie-based session from another origin.',
+    });
+  });
+
+  it('creates a minimal demo post response', () => {
+    expect(
+      postController.createPost({
+        userId: 'user-1',
+        content: 'CORS request with credentials',
+      }),
+    ).toEqual({
+      message: 'Post created successfully.',
+      post: {
+        id: 'post-1',
+        userId: 'user-1',
+        content: 'CORS request with credentials',
+      },
+      note: 'This route is designed for cross-origin requests that include credentials such as cookies.',
     });
   });
 });
