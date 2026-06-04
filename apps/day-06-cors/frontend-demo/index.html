@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 06 CORS Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 760px;
+        margin: 40px auto;
+        line-height: 1.6;
+        padding: 0 16px;
+      }
+
+      button {
+        margin-right: 12px;
+        margin-bottom: 12px;
+        padding: 10px 16px;
+        cursor: pointer;
+      }
+
+      pre {
+        background: #f5f5f5;
+        padding: 12px;
+        overflow: auto;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      .error {
+        color: #b00020;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Day 06 CORS Demo</h1>
+    <p>
+      請用不同 origin 開這個頁面，並搭配 <code>credentials: 'include'</code>
+      觀察 CORS 行為。
+    </p>
+    <p>API: <code>http://localhost:3000</code></p>
+    <p>建議同時打開瀏覽器 DevTools 的 <code>Console</code> 與 <code>Network</code>。</p>
+
+    <button id="get-profile">GET /user/me</button>
+    <button id="create-post">POST /post</button>
+
+    <h2>Result</h2>
+    <pre id="result">No request yet.</pre>
+
+    <h2>Error</h2>
+    <pre id="error" class="error">No error yet.</pre>
+
+    <script>
+      const API_BASE = 'http://localhost:3000';
+      const resultEl = document.getElementById('result');
+      const errorEl = document.getElementById('error');
+
+      function resetOutput() {
+        resultEl.textContent = 'Loading...';
+        errorEl.textContent = '';
+      }
+
+      function showSuccess(data) {
+        resultEl.textContent = JSON.stringify(data, null, 2);
+      }
+
+      function showError(error) {
+        resultEl.textContent = 'Request failed.';
+        errorEl.textContent = String(error);
+      }
+
+      document.getElementById('get-profile').addEventListener('click', async () => {
+        resetOutput();
+
+        try {
+          const response = await fetch(`${API_BASE}/user/me`, {
+            method: 'GET',
+            credentials: 'include',
+          });
+
+          const data = await response.json();
+          showSuccess(data);
+        } catch (error) {
+          showError(error);
+        }
+      });
+
+      document.getElementById('create-post').addEventListener('click', async () => {
+        resetOutput();
+
+        try {
+          const response = await fetch(`${API_BASE}/post`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              userId: 'user-1',
+              content: 'Hello from frontend demo',
+            }),
+          });
+
+          const data = await response.json();
+          showSuccess(data);
+        } catch (error) {
+          showError(error);
+        }
+      });
+    </script>
+  </body>
+</html>
