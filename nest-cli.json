@@ -56,13 +56,13 @@
         "tsConfigPath": "apps/day-06-cors/tsconfig.app.json"
       }
     },
-    "day-07-validation-pipe-body": {
+    "day-07-dto-runtime-metadata": {
       "type": "application",
-      "root": "apps/day-07-validation-pipe-body",
+      "root": "apps/day-07-dto-runtime-metadata",
       "entryFile": "main",
-      "sourceRoot": "apps/day-07-validation-pipe-body/src",
+      "sourceRoot": "apps/day-07-dto-runtime-metadata/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-07-validation-pipe-body/tsconfig.app.json"
+        "tsConfigPath": "apps/day-07-dto-runtime-metadata/tsconfig.app.json"
       }
     },
     "day-08-boolean-transform": {
