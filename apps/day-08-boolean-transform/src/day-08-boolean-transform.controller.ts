@@ -1,12 +1,31 @@
-import { Controller, Get } from '@nestjs/common';
-import { Day08BooleanTransformService } from './day-08-boolean-transform.service';
+import {
+  Controller,
+  Get,
+  Query,
+  UsePipes,
+  ValidationPipe,
+} from '@nestjs/common';
+import { ImplicitPostsQueryDto } from './dto/implicit-posts.query.dto';
+import { ManualPostsQueryDto } from './dto/manual-posts.query.dto';
 
-@Controller()
+@Controller('posts')
 export class Day08BooleanTransformController {
-  constructor(private readonly day08BooleanTransformService: Day08BooleanTransformService) {}
+  @Get('manual-version')
+  findWithExplicitBoolean(
+    @Query(new ValidationPipe({ transform: true }))
+    query: ManualPostsQueryDto,
+  ) {
+    return query;
+  }
 
-  @Get()
-  getHello(): string {
-    return this.day08BooleanTransformService.getHello();
+  @Get('implicit-version')
+  @UsePipes(
+    new ValidationPipe({
+      transform: true,
+      transformOptions: { enableImplicitConversion: true },
+    }),
+  )
+  findWithImplicitBoolean(@Query() query: ImplicitPostsQueryDto) {
+    return query;
   }
 }
