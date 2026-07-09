@@ -1,10 +1,7 @@
 import { Module } from '@nestjs/common';
-import { Day11QueryParamArrayController } from './day-11-query-param-array.controller';
-import { Day11QueryParamArrayService } from './day-11-query-param-array.service';
+import { PostsModule } from './posts/posts.module';
 
 @Module({
-  imports: [],
-  controllers: [Day11QueryParamArrayController],
-  providers: [Day11QueryParamArrayService],
+  imports: [PostsModule],
 })
 export class Day11QueryParamArrayModule {}
