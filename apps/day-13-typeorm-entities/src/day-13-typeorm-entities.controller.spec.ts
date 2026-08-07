@@ -4,14 +4,24 @@ import { Day13TypeormEntitiesService } from './day-13-typeorm-entities.service';
 
 describe('Day13TypeormEntitiesController', () => {
   let day13TypeormEntitiesController: Day13TypeormEntitiesController;
+  const day13TypeormEntitiesService = {
+    getHello: jest.fn(() => 'Hello World!'),
+  };
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [Day13TypeormEntitiesController],
-      providers: [Day13TypeormEntitiesService],
+      providers: [
+        {
+          provide: Day13TypeormEntitiesService,
+          useValue: day13TypeormEntitiesService,
+        },
+      ],
     }).compile();
 
-    day13TypeormEntitiesController = app.get<Day13TypeormEntitiesController>(Day13TypeormEntitiesController);
+    day13TypeormEntitiesController = app.get<Day13TypeormEntitiesController>(
+      Day13TypeormEntitiesController,
+    );
   });
 
   describe('root', () => {
