@@ -128,22 +128,22 @@
         "tsConfigPath": "apps/day-14-typeorm-for-feature/tsconfig.app.json"
       }
     },
-    "day-15-one-to-many-relation": {
+    "day-15-lazy-loading-n-plus-one": {
       "type": "application",
-      "root": "apps/day-15-one-to-many-relation",
+      "root": "apps/day-15-lazy-loading-n-plus-one",
       "entryFile": "main",
-      "sourceRoot": "apps/day-15-one-to-many-relation/src",
+      "sourceRoot": "apps/day-15-lazy-loading-n-plus-one/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-15-one-to-many-relation/tsconfig.app.json"
+        "tsConfigPath": "apps/day-15-lazy-loading-n-plus-one/tsconfig.app.json"
       }
     },
-    "day-16-lazy-loading-n-plus-one": {
+    "day-16-tbd": {
       "type": "application",
-      "root": "apps/day-16-lazy-loading-n-plus-one",
+      "root": "apps/day-16-tbd",
       "entryFile": "main",
-      "sourceRoot": "apps/day-16-lazy-loading-n-plus-one/src",
+      "sourceRoot": "apps/day-16-tbd/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-16-lazy-loading-n-plus-one/tsconfig.app.json"
+        "tsConfigPath": "apps/day-16-tbd/tsconfig.app.json"
       }
     },
     "day-17-config-init-order": {
