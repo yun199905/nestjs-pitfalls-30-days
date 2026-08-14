@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class Day16LazyLoadingNPlusOneService {
+export class Day15LazyLoadingNPlusOneService {
   getHello(): string {
     return 'Hello World!';
   }

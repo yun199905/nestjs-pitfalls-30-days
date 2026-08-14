@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class Day15OneToManyRelationService {
+export class Day16TbdService {
   getHello(): string {
     return 'Hello World!';
   }
