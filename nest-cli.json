@@ -146,13 +146,13 @@
         "tsConfigPath": "apps/day-16-tbd/tsconfig.app.json"
       }
     },
-    "day-17-config-init-order": {
+    "day-17-config-module-scope": {
       "type": "application",
-      "root": "apps/day-17-config-init-order",
+      "root": "apps/day-17-config-module-scope",
       "entryFile": "main",
-      "sourceRoot": "apps/day-17-config-init-order/src",
+      "sourceRoot": "apps/day-17-config-module-scope/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-17-config-init-order/tsconfig.app.json"
+        "tsConfigPath": "apps/day-17-config-module-scope/tsconfig.app.json"
       }
     },
     "day-18-transaction-rollback": {
