@@ -1,0 +1,18 @@
+#   docker compose up -d      啟動
+#   docker compose down -v    收尾（連資料一起清掉）
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: day18-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: day18
+    ports:
+      - '5432:5432'
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d day18']
+      interval: 2s
+      timeout: 3s
+      retries: 15
