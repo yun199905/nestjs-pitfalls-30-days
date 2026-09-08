@@ -218,13 +218,13 @@
         "tsConfigPath": "apps/day-24-swagger-api-property/tsconfig.app.json"
       }
     },
-    "day-25-swagger-jwt-bearer": {
+    "day-25-swagger-complex-types": {
       "type": "application",
-      "root": "apps/day-25-swagger-jwt-bearer",
+      "root": "apps/day-25-swagger-complex-types",
       "entryFile": "main",
-      "sourceRoot": "apps/day-25-swagger-jwt-bearer/src",
+      "sourceRoot": "apps/day-25-swagger-complex-types/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-25-swagger-jwt-bearer/tsconfig.app.json"
+        "tsConfigPath": "apps/day-25-swagger-complex-types/tsconfig.app.json"
       }
     },
     "day-26-json-stringify-entity-cycle": {
