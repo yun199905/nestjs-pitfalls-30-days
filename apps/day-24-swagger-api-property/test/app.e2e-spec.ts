@@ -29,7 +29,6 @@ describe('Day24SwaggerApiPropertyController (e2e)', () => {
     title: 'NestJS Swagger Debug',
     content: 'runtime 仍然可以收到這個欄位',
     tags: ['nestjs', 'swagger'],
-    relatedPostIds: [23, 24],
     publishOptions: { notifyFollowers: true },
   };
 
@@ -47,14 +46,13 @@ describe('Day24SwaggerApiPropertyController (e2e)', () => {
 
   const UPDATE_VARIANTS = [
     'missing-decorator',
-    'untyped-array',
     'nested-interface',
     'plain-partial',
     'correct',
   ] as const;
 
   it.each(UPDATE_VARIANTS)(
-    'PATCH /posts/:id/%s 在 runtime 收到完整 body（五支端點的 runtime 行為一致）',
+    'PATCH /posts/:id/%s 在 runtime 收到完整 body（四支端點的 runtime 行為一致）',
     (variant) => {
       return request(app.getHttpServer() as App)
         .patch(`/posts/24/${variant}`)
@@ -64,46 +62,32 @@ describe('Day24SwaggerApiPropertyController (e2e)', () => {
     },
   );
 
-  it('問題一：沒掛 @ApiProperty() 的 property 在 schema 裡完全不存在', () => {
-    const brokenProperties = properties('MissingDecoratorUpdatePostDto');
+  it('問題一：沒有任何 @ApiProperty()，schema 的 properties 是空的', () => {
+    const document = createDocument();
 
-    expect(brokenProperties).not.toHaveProperty('content');
+    // 四個欄位都有 TypeScript 型別，卻一個都沒被登記
+    expect(document.components?.schemas?.MissingDecoratorUpdatePostDto).toEqual(
+      {
+        type: 'object',
+        properties: {},
+      },
+    );
 
-    // 其餘欄位一律正確 —— 這支端點只壞在一個地方
-    expect(Object.keys(brokenProperties)).toEqual([
-      'title',
-      'tags',
-      'relatedPostIds',
-      'publishOptions',
-    ]);
-    expect(brokenProperties.publishOptions).toEqual({
-      $ref: '#/components/schemas/PublishOptionsDto',
+    // 和問題三的差別：body 型別是實際的 class，requestBody 仍然會產生
+    expect(
+      document.paths['/posts/{id}/missing-decorator'].patch?.requestBody,
+    ).toMatchObject({
+      content: {
+        'application/json': {
+          schema: {
+            $ref: '#/components/schemas/MissingDecoratorUpdatePostDto',
+          },
+        },
+      },
     });
   });
 
-  it('問題二：array 沒指定 items 型別時一律預設 string，number[] 因此被寫錯', () => {
-    const brokenProperties = properties('UntypedArrayUpdatePostDto');
-
-    // items 預設 string，所以 string[] 剛好被寫對 —— 歪打正著。
-    expect(brokenProperties.tags).toMatchObject({
-      type: 'array',
-      items: { type: 'string' },
-    });
-
-    // 同一個預設值套在 number[] 上就默默寫錯了
-    expect(brokenProperties.relatedPostIds).toMatchObject({
-      type: 'array',
-      items: { type: 'string' },
-    });
-
-    // 對照正解：明確給 type: [Number] 才會是 number
-    expect(properties('UpdatePostDto').relatedPostIds).toMatchObject({
-      type: 'array',
-      items: { type: 'number' },
-    });
-  });
-
-  it('問題三：巢狀型別宣告成 interface，runtime 擦除後只剩 type: object 空殼', () => {
+  it('問題二：巢狀型別宣告成 interface，runtime 擦除後只剩 type: object 空殼', () => {
     const document = createDocument();
     const brokenProperties = properties('NestedInterfaceUpdatePostDto');
 
@@ -115,7 +99,7 @@ describe('Day24SwaggerApiPropertyController (e2e)', () => {
     );
   });
 
-  it('問題四：用 TypeScript 的 Partial<T> 當 body 型別，Swagger 連 requestBody 都不產生', () => {
+  it('問題三：用 TypeScript 的 Partial<T> 當 body 型別，Swagger 連 requestBody 都不產生', () => {
     const document = createDocument();
     const plainPartial = document.paths['/posts/{id}/plain-partial'].patch;
 
@@ -138,12 +122,11 @@ describe('Day24SwaggerApiPropertyController (e2e)', () => {
       'MissingDecoratorUpdatePostDto',
       'NestedInterfaceUpdatePostDto',
       'PublishOptionsDto',
-      'UntypedArrayUpdatePostDto',
       'UpdatePostDto',
     ]);
   });
 
-  it('正解：UpdatePostDto 五個 properties 齊全、全部 optional、巢狀走 $ref', () => {
+  it('正解：UpdatePostDto 四個 properties 齊全、全部 optional、巢狀走 $ref', () => {
     const schemas = createDocument().components?.schemas;
 
     expect(schemas?.UpdatePostDto).toEqual({
@@ -161,11 +144,6 @@ describe('Day24SwaggerApiPropertyController (e2e)', () => {
           type: 'array',
           items: { type: 'string' },
           description: '文章標籤',
-        },
-        relatedPostIds: {
-          type: 'array',
-          items: { type: 'number' },
-          description: '相關文章 ID',
         },
         publishOptions: {
           $ref: '#/components/schemas/PublishOptionsDto',

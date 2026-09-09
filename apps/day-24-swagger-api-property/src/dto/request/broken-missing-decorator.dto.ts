@@ -1,24 +1,19 @@
-import { ApiProperty, PartialType } from '@nestjs/swagger';
+import { PartialType } from '@nestjs/swagger';
 import { PublishOptionsDto } from './publish-options.dto';
 
+// 問題一：四個欄位都有 TypeScript 型別，但沒有任何一個向 Swagger 登記 metadata。
+// runtime 照樣收得到完整 JSON，OpenAPI schema 卻是空的。
 class MissingDecoratorPostFieldsDto {
-  @ApiProperty({ description: '文章標題' })
   title: string;
 
-  // 問題一：只有這個欄位沒掛 @ApiProperty()。runtime 收得到，OpenAPI schema 裡卻不存在。
   content: string;
 
-  @ApiProperty({ type: [String], description: '文章標籤' })
   tags: string[];
 
-  @ApiProperty({ type: [Number], description: '相關文章 ID' })
-  relatedPostIds: number[];
-
-  @ApiProperty({ type: () => PublishOptionsDto })
   publishOptions: PublishOptionsDto;
 }
 
-// PartialType() 複製不到 base 沒登記的 content —— 問題一的延續，不是另一個坑。
+// PartialType() 沒有任何已登記的 metadata 可以複製 —— 問題一的延續，不是另一個坑。
 export class MissingDecoratorUpdatePostDto extends PartialType(
   MissingDecoratorPostFieldsDto,
 ) {}
