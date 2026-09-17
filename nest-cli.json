@@ -20,6 +20,15 @@
         "tsConfigPath": "apps/day-02-provider-dependency/tsconfig.app.json"
       }
     },
+    "day-03-manual-new-service": {
+      "type": "application",
+      "root": "apps/day-03-manual-new-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-03-manual-new-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-03-manual-new-service/tsconfig.app.json"
+      }
+    },
     "day-03-circular-dependency": {
       "type": "application",
       "root": "apps/day-03-circular-dependency",
@@ -36,6 +45,15 @@
       "sourceRoot": "apps/day-04-for-root-async/src",
       "compilerOptions": {
         "tsConfigPath": "apps/day-04-for-root-async/tsconfig.app.json"
+      }
+    },
+    "day-04-use-factory-inject": {
+      "type": "application",
+      "root": "apps/day-04-use-factory-inject",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-04-use-factory-inject/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-04-use-factory-inject/tsconfig.app.json"
       }
     },
     "day-05-dynamic-route": {
