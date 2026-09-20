@@ -7,7 +7,7 @@ import * as Joi from 'joi';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: 'apps/day-21-env-joi-validation/.env.example',
+      envFilePath: 'apps/day-06-env-joi-validation/.env.example',
       validatePredefined: false,
       validationSchema: Joi.object({
         // 解法一：取消下一行註解，讓 Joi 在啟動時轉型並驗證 PORT
@@ -19,4 +19,4 @@ import * as Joi from 'joi';
     }),
   ],
 })
-export class Day21EnvJoiValidationModule {}
+export class Day06EnvJoiValidationModule {}

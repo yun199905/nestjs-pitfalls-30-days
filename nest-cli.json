@@ -200,13 +200,13 @@
         "tsConfigPath": "apps/day-20-config-outside-di/tsconfig.app.json"
       }
     },
-    "day-21-env-joi-validation": {
+    "day-06-env-joi-validation": {
       "type": "application",
-      "root": "apps/day-21-env-joi-validation",
+      "root": "apps/day-06-env-joi-validation",
       "entryFile": "main",
-      "sourceRoot": "apps/day-21-env-joi-validation/src",
+      "sourceRoot": "apps/day-06-env-joi-validation/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-21-env-joi-validation/tsconfig.app.json"
+        "tsConfigPath": "apps/day-06-env-joi-validation/tsconfig.app.json"
       }
     },
     "day-22-multi-env-config": {

@@ -27,7 +27,7 @@ PORT=3000
 執行：
 
 ```bash
-npx nest start day-21-env-joi-validation
+npx nest start day-06-env-joi-validation
 ```
 
 這支程式不會啟動 HTTP server。它建立 Nest application context、讀取設定、印出結果後便會自行結束。
@@ -57,7 +57,7 @@ const configPort = configService.get<number>('PORT');
 
 ## 3. 用 Joi 在啟動時轉型與驗證
 
-打開 `src/day-21-env-joi-validation.module.ts`，取消 `PORT` 規則的註解：
+打開 `src/day-06-env-joi-validation.module.ts`，取消 `PORT` 規則的註解：
 
 ```typescript
 validationSchema: Joi.object({
@@ -68,7 +68,7 @@ validationSchema: Joi.object({
 重新執行相同指令：
 
 ```bash
-npx nest start day-21-env-joi-validation
+npx nest start day-06-env-joi-validation
 ```
 
 這次結果會變成：
@@ -157,7 +157,7 @@ import { validateEnvironment } from './env.validation';
 
 ```typescript
 ConfigModule.forRoot({
-  envFilePath: 'apps/day-21-env-joi-validation/.env.example',
+  envFilePath: 'apps/day-06-env-joi-validation/.env.example',
   validatePredefined: false,
   validate: validateEnvironment,
 });
@@ -166,7 +166,7 @@ ConfigModule.forRoot({
 重新執行：
 
 ```bash
-npx nest start day-21-env-joi-validation
+npx nest start day-06-env-joi-validation
 ```
 
 ConfigService 一樣會取得真正的 number：
@@ -199,7 +199,7 @@ nextPort                          → 3001
 | `validationSchema`／`validate` | 驗證、套用預設值與執行期轉型                 |
 | `isGlobal`                     | `ConfigService` 是否能被其他 module 直接注入 |
 
-`Day21EnvJoiValidationModule` 已直接 import `ConfigModule.forRoot()`。因此，只要 Joi 或 custom validate 已正確處理 `PORT`，無論 `isGlobal` 是 `false` 或 `true`，這個 application context 中的 `ConfigService` 都會讀到 number。移除 `isGlobal: true` 或將它改成 `false`，不會讓已驗證的值退回字串。
+`Day06EnvJoiValidationModule` 已直接 import `ConfigModule.forRoot()`。因此，只要 Joi 或 custom validate 已正確處理 `PORT`，無論 `isGlobal` 是 `false` 或 `true`，這個 application context 中的 `ConfigService` 都會讀到 number。移除 `isGlobal: true` 或將它改成 `false`，不會讓已驗證的值退回字串。
 
 反過來說，若某個 module 沒有 import `ConfigModule`，`isGlobal: false` 可能讓它無法注入 `ConfigService`；這是 provider 可見性的問題，不是 Joi 有沒有執行轉型的問題。
 
@@ -255,7 +255,7 @@ configService.get<number>('PORT', 3000);
 
 ```bash
 npx jest --runInBand \
-  apps/day-21-env-joi-validation/src/environment-validation.spec.ts
+  apps/day-06-env-joi-validation/src/environment-validation.spec.ts
 ```
 
 測試涵蓋：

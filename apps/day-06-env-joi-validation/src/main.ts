@@ -1,10 +1,10 @@
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
-import { Day21EnvJoiValidationModule } from './day-21-env-joi-validation.module';
+import { Day06EnvJoiValidationModule } from './day-06-env-joi-validation.module';
 
 async function bootstrap() {
   const app = await NestFactory.createApplicationContext(
-    Day21EnvJoiValidationModule,
+    Day06EnvJoiValidationModule,
     { logger: false },
   );
   const configService = app.get(ConfigService);
