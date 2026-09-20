@@ -29,13 +29,13 @@
         "tsConfigPath": "apps/day-03-manual-new-service/tsconfig.app.json"
       }
     },
-    "day-03-circular-dependency": {
+    "day-07-circular-dependency": {
       "type": "application",
-      "root": "apps/day-03-circular-dependency",
+      "root": "apps/day-07-circular-dependency",
       "entryFile": "main",
-      "sourceRoot": "apps/day-03-circular-dependency/src",
+      "sourceRoot": "apps/day-07-circular-dependency/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-03-circular-dependency/tsconfig.app.json"
+        "tsConfigPath": "apps/day-07-circular-dependency/tsconfig.app.json"
       }
     },
     "day-05-for-root-async": {
@@ -90,6 +90,15 @@
       "sourceRoot": "apps/day-08-boolean-transform/src",
       "compilerOptions": {
         "tsConfigPath": "apps/day-08-boolean-transform/tsconfig.app.json"
+      }
+    },
+    "day-08-request-scope-chain-reaction": {
+      "type": "application",
+      "root": "apps/day-08-request-scope-chain-reaction",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-08-request-scope-chain-reaction/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-08-request-scope-chain-reaction/tsconfig.app.json"
       }
     },
     "day-09-whitelist-forbid-non-whitelisted": {

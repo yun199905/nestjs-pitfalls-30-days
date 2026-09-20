@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { Day03CircularDependencyController } from './day-03-circular-dependency.controller';
-import { Day03CircularDependencyService } from './day-03-circular-dependency.service';
+import { Day07CircularDependencyController } from './day-07-circular-dependency.controller';
+import { Day07CircularDependencyService } from './day-07-circular-dependency.service';
 import { UserModule } from './user/user.module';
 import { PostModule } from './post/post.module';
 
@@ -10,8 +10,8 @@ import { PostModule } from './post/post.module';
 // import { BarrelFilesModule } from './pitfalls/03-barrel-files/barrel-files.module';
 
 @Module({
-  controllers: [Day03CircularDependencyController],
-  providers: [Day03CircularDependencyService],
+  controllers: [Day07CircularDependencyController],
+  providers: [Day07CircularDependencyService],
   imports: [
     UserModule,
     PostModule,
@@ -22,4 +22,4 @@ import { PostModule } from './post/post.module';
     // BarrelFilesModule,   // 情境 3：解除註解後，NestJS 可能連啟動都無法啟動
   ],
 })
-export class Day03CircularDependencyModule {}
+export class Day07CircularDependencyModule {}
