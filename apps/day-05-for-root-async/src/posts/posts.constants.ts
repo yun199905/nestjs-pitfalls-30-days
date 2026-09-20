@@ -1,1 +1,0 @@
-export const POSTS_MODULE_OPTIONS = Symbol('POSTS_MODULE_OPTIONS');

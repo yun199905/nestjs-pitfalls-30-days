@@ -38,13 +38,13 @@
         "tsConfigPath": "apps/day-03-circular-dependency/tsconfig.app.json"
       }
     },
-    "day-04-for-root-async": {
+    "day-05-for-root-async": {
       "type": "application",
-      "root": "apps/day-04-for-root-async",
+      "root": "apps/day-05-for-root-async",
       "entryFile": "main",
-      "sourceRoot": "apps/day-04-for-root-async/src",
+      "sourceRoot": "apps/day-05-for-root-async/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-04-for-root-async/tsconfig.app.json"
+        "tsConfigPath": "apps/day-05-for-root-async/tsconfig.app.json"
       }
     },
     "day-04-use-factory-inject": {
