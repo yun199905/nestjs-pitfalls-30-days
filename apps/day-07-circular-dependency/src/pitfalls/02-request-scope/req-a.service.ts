@@ -1,31 +1,27 @@
-import { forwardRef, Inject, Injectable, Scope } from '@nestjs/common';
+import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { ReqBService } from './req-b.service';
+import { RequestContextService } from './request-context.service';
 
-@Injectable({ scope: Scope.REQUEST })
+@Injectable()
 export class ReqAService {
-  // 刻意延後到 handler 才初始化，用來對比 B constructor 讀取時的時機差異。
-  private token?: string;
-
   constructor(
     @Inject(forwardRef(() => ReqBService))
     private readonly bService: ReqBService,
-  ) {
-    console.log('[Scope Pitfall] ReqAService 實例化');
-  }
+    private readonly requestContext: RequestContextService,
+  ) {}
 
   doSomething() {
-    // handler 階段才初始化：此時 B 的 constructor 早已執行完畢。
-    this.token = `req-${Date.now()}`;
-
     return {
-      // 💣 核心雷點：B 在 constructor 快照的值，因為時機太早通常為 undefined。
-      tokenAtBConstruct: this.bService.getTokenAtConstruct(),
-      // 對照組：handler 此刻讀到 A 的值，已正確初始化。
-      tokenAtHandler: this.token,
+      requestContextOnResolvedA: this.hasRequestContext(),
+      reqBServiceOnResolvedA: this.bService !== undefined,
+      // TypeScript 認為 bService 必然存在，但 request scope 與循環依賴的組合
+      // 可能讓 Nest 在執行期交付 undefined。這裡刻意使用安全存取來回傳診斷結果。
+      requestContextOnASeenFromB:
+        this.bService?.canSeeARequestContext() ?? false,
     };
   }
 
-  getToken() {
-    return this.token;
+  hasRequestContext() {
+    return this.requestContext !== undefined;
   }
 }

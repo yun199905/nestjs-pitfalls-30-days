@@ -18,7 +18,7 @@ import { PostModule } from './post/post.module';
 
     // ⬇️ 進階情境挑戰區 (解開註解測試) ⬇️
     // InitOrderModule,     // 情境 1：觀察 Console 中的初始化順序混亂
-    // RequestScopeModule,  // 情境 2：打 API 測試 Request Scope 時引發的崩潰
+    // RequestScopeModule, // 情境 2：觀察 Request Scope 在循環路徑中的不完整依賴
     // BarrelFilesModule,   // 情境 3：解除註解後，NestJS 可能連啟動都無法啟動
   ],
 })
