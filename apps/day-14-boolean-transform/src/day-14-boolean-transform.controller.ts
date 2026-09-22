@@ -9,7 +9,7 @@ import { ImplicitPostsQueryDto } from './dto/implicit-posts.query.dto';
 import { ManualPostsQueryDto } from './dto/manual-posts.query.dto';
 
 @Controller('posts')
-export class Day08BooleanTransformController {
+export class Day14BooleanTransformController {
   @Get('manual-version')
   findWithExplicitBoolean(
     @Query(new ValidationPipe({ transform: true }))

@@ -1,24 +1,24 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { Day08BooleanTransformController } from './day-08-boolean-transform.controller';
+import { Day14BooleanTransformController } from './day-14-boolean-transform.controller';
 
-describe('Day08BooleanTransformController', () => {
-  let day08BooleanTransformController: Day08BooleanTransformController;
+describe('Day14BooleanTransformController', () => {
+  let day14BooleanTransformController: Day14BooleanTransformController;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
-      controllers: [Day08BooleanTransformController],
+      controllers: [Day14BooleanTransformController],
     }).compile();
 
-    day08BooleanTransformController =
-      app.get<Day08BooleanTransformController>(
-        Day08BooleanTransformController,
+    day14BooleanTransformController =
+      app.get<Day14BooleanTransformController>(
+        Day14BooleanTransformController,
       );
   });
 
   describe('findPostsWithImplicitBoolean', () => {
     it('should return transformed query directly', () => {
       expect(
-        day08BooleanTransformController.findWithImplicitBoolean({
+        day14BooleanTransformController.findWithImplicitBoolean({
           isPublished: true,
         }),
       ).toEqual({ isPublished: true });
@@ -28,7 +28,7 @@ describe('Day08BooleanTransformController', () => {
   describe('findPostsWithExplicitBoolean', () => {
     it('should return transformed query directly', () => {
       expect(
-        day08BooleanTransformController.findWithExplicitBoolean({
+        day14BooleanTransformController.findWithExplicitBoolean({
           isPublished: false,
         }),
       ).toEqual({ isPublished: false });

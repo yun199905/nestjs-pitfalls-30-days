@@ -1,14 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
-import { Day08BooleanTransformModule } from './../src/day-08-boolean-transform.module';
+import { Day14BooleanTransformModule } from './../src/day-14-boolean-transform.module';
 
-describe('Day08BooleanTransformController (e2e)', () => {
+describe('Day14BooleanTransformController (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [Day08BooleanTransformModule],
+      imports: [Day14BooleanTransformModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();

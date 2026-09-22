@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class Day08BooleanTransformService {
+export class Day14BooleanTransformService {
   getHello(): string {
     return 'Hello World!';
   }
