@@ -83,15 +83,6 @@
         "tsConfigPath": "apps/day-07-dto-runtime-metadata/tsconfig.app.json"
       }
     },
-    "day-08-boolean-transform": {
-      "type": "application",
-      "root": "apps/day-08-boolean-transform",
-      "entryFile": "main",
-      "sourceRoot": "apps/day-08-boolean-transform/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/day-08-boolean-transform/tsconfig.app.json"
-      }
-    },
     "day-08-request-scope-chain-reaction": {
       "type": "application",
       "root": "apps/day-08-request-scope-chain-reaction",
@@ -101,13 +92,13 @@
         "tsConfigPath": "apps/day-08-request-scope-chain-reaction/tsconfig.app.json"
       }
     },
-    "day-09-whitelist-forbid-non-whitelisted": {
+    "day-09-global-pipe-di": {
       "type": "application",
-      "root": "apps/day-09-whitelist-forbid-non-whitelisted",
+      "root": "apps/day-09-global-pipe-di",
       "entryFile": "main",
-      "sourceRoot": "apps/day-09-whitelist-forbid-non-whitelisted/src",
+      "sourceRoot": "apps/day-09-global-pipe-di/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-09-whitelist-forbid-non-whitelisted/tsconfig.app.json"
+        "tsConfigPath": "apps/day-09-global-pipe-di/tsconfig.app.json"
       }
     },
     "day-10-nested-dto-validation": {
@@ -144,6 +135,15 @@
       "sourceRoot": "apps/day-13-typeorm-entities/src",
       "compilerOptions": {
         "tsConfigPath": "apps/day-13-typeorm-entities/tsconfig.app.json"
+      }
+    },
+    "day-14-boolean-transform": {
+      "type": "application",
+      "root": "apps/day-14-boolean-transform",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-14-boolean-transform/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-14-boolean-transform/tsconfig.app.json"
       }
     },
     "day-14-typeorm-for-feature": {
