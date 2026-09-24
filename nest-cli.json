@@ -92,13 +92,13 @@
         "tsConfigPath": "apps/day-08-request-scope-chain-reaction/tsconfig.app.json"
       }
     },
-    "day-09-global-pipe-di": {
+    "day-09-global-enhancer-di": {
       "type": "application",
-      "root": "apps/day-09-global-pipe-di",
+      "root": "apps/day-09-global-enhancer-di",
       "entryFile": "main",
-      "sourceRoot": "apps/day-09-global-pipe-di/src",
+      "sourceRoot": "apps/day-09-global-enhancer-di/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-09-global-pipe-di/tsconfig.app.json"
+        "tsConfigPath": "apps/day-09-global-enhancer-di/tsconfig.app.json"
       }
     },
     "day-10-nested-dto-validation": {
