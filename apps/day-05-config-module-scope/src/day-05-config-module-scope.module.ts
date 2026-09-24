@@ -22,4 +22,4 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     }),
   ],
 })
-export class Day17ConfigModuleScopeModule {}
+export class Day05ConfigModuleScopeModule {}

@@ -1,4 +1,4 @@
-# Day 17 練習題：ConfigService 注入不到
+# Day 05 練習題：ConfigService 注入不到
 
 ## 目標
 
@@ -14,12 +14,12 @@
 cp .env.example .env
 ```
 
-`.env` 要放在 **repo 根目錄**，不是放在 `apps/day-17-config-module-scope/` 底下。因為 `@nestjs/config` 預設讀取 `process.cwd()/.env`，而 `nest start <project>` 的 cwd 是 repo 根目錄。
+`.env` 要放在 **repo 根目錄**，不是放在 `apps/day-05-config-module-scope/` 底下。因為 `@nestjs/config` 預設讀取 `process.cwd()/.env`，而 `nest start <project>` 的 cwd 是 repo 根目錄。
 
 ### 1. 觀察坑點（目前狀態）
 
 ```bash
-npx nest start day-17-config-module-scope
+npx nest start day-05-config-module-scope
 ```
 
 應用程式起不來，終端機會印出：
@@ -30,7 +30,7 @@ TypeOrmModuleOptions (?). Please make sure that the argument ConfigService at
 index [0] is available in the TypeOrmCoreModule module.
 ```
 
-打開 `src/day-17-config-module-scope.module.ts`，可以看到 `TypeOrmModule.forRootAsync()` 裡確實寫了 `inject: [ConfigService]`，而 `ConfigModule.forRoot()` 也確實在同一個 `imports` 陣列裡註冊了。
+打開 `src/day-05-config-module-scope.module.ts`，可以看到 `TypeOrmModule.forRootAsync()` 裡確實寫了 `inject: [ConfigService]`，而 `ConfigModule.forRoot()` 也確實在同一個 `imports` 陣列裡註冊了。
 
 先注意錯誤訊息挑明的地方：它說的不是「找不到 ConfigService」，而是「**在 `TypeOrmCoreModule` 這個模組裡**找不到」。`TypeOrmCoreModule` 是 `forRootAsync()` 動態產生出來的模組，有自己的作用域。
 
@@ -74,7 +74,7 @@ TypeOrmCoreModule module.
   within TypeOrmCoreModule?
 ```
 
-照做。打開 `src/day-17-config-module-scope.module.ts`，把 `forRootAsync` 裡的這行取消註解：
+照做。打開 `src/day-05-config-module-scope.module.ts`，把 `forRootAsync` 裡的這行取消註解：
 
 ```typescript
 imports: [ConfigModule],
@@ -103,7 +103,7 @@ isGlobal: true,
 在修好的狀態下（解法一或解法二皆可）：
 
 ```bash
-npx jest --config apps/day-17-config-module-scope/test/jest-e2e.json
+npx jest --config apps/day-05-config-module-scope/test/jest-e2e.json
 ```
 
 這支測試會確認 `DataSource` 真的建立起來，而且 `database` 就是 `.env` 裡設定的值——也就是 `useFactory` 確實拿到了 `ConfigService`。
@@ -112,4 +112,4 @@ npx jest --config apps/day-17-config-module-scope/test/jest-e2e.json
 
 ### 6. 還原
 
-實驗完請把 `src/day-17-config-module-scope.module.ts` 改回**起始狀態**（`isGlobal` 與 `imports` 兩行都維持註解），這樣下次打開才踩得到坑。
+實驗完請把 `src/day-05-config-module-scope.module.ts` 改回**起始狀態**（`isGlobal` 與 `imports` 兩行都維持註解），這樣下次打開才踩得到坑。
