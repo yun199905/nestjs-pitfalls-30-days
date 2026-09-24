@@ -9,4 +9,4 @@ import { UserService } from './user/user.service';
   controllers: [PostController, UserController],
   providers: [PostService, UserService],
 })
-export class Day06CorsModule {}
+export class Day11CorsModule {}

@@ -1,15 +1,15 @@
 import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import request from 'supertest';
-import { Day06CorsModule } from './../src/day-06-cors.module';
+import { Day11CorsModule } from './../src/day-11-cors.module';
 
-describe('Day06Cors (e2e)', () => {
+describe('Day11Cors (e2e)', () => {
   let app: INestApplication;
   let server: ReturnType<INestApplication['getHttpAdapter']>['getInstance'];
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [Day06CorsModule],
+      imports: [Day11CorsModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();

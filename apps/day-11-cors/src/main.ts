@@ -1,8 +1,8 @@
 import { NestFactory } from '@nestjs/core';
-import { Day06CorsModule } from './day-06-cors.module';
+import { Day11CorsModule } from './day-11-cors.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(Day06CorsModule);
+  const app = await NestFactory.create(Day11CorsModule);
 
   // Wrong example for the article:
   app.enableCors({

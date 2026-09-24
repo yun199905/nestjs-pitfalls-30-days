@@ -4,7 +4,7 @@ import { PostService } from './post/post.service';
 import { UserController } from './user/user.controller';
 import { UserService } from './user/user.service';
 
-describe('Day06CorsControllers', () => {
+describe('Day11CorsControllers', () => {
   let postController: PostController;
   let userController: UserController;
 
