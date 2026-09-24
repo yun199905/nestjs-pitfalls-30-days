@@ -56,15 +56,6 @@
         "tsConfigPath": "apps/day-04-use-factory-inject/tsconfig.app.json"
       }
     },
-    "day-05-dynamic-route": {
-      "type": "application",
-      "root": "apps/day-05-dynamic-route",
-      "entryFile": "main",
-      "sourceRoot": "apps/day-05-dynamic-route/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/day-05-dynamic-route/tsconfig.app.json"
-      }
-    },
     "day-06-cors": {
       "type": "application",
       "root": "apps/day-06-cors",
@@ -99,6 +90,15 @@
       "sourceRoot": "apps/day-09-global-enhancer-di/src",
       "compilerOptions": {
         "tsConfigPath": "apps/day-09-global-enhancer-di/tsconfig.app.json"
+      }
+    },
+    "day-10-dynamic-route": {
+      "type": "application",
+      "root": "apps/day-10-dynamic-route",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-10-dynamic-route/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-10-dynamic-route/tsconfig.app.json"
       }
     },
     "day-10-nested-dto-validation": {

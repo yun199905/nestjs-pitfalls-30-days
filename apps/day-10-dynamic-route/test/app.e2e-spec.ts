@@ -1,14 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { Day05DynamicRouteModule } from './../src/day-05-dynamic-route.module';
+import { Day10DynamicRouteModule } from './../src/day-10-dynamic-route.module';
 
-describe('Day05DynamicRouteController (e2e)', () => {
+describe('Day10DynamicRouteController (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [Day05DynamicRouteModule],
+      imports: [Day10DynamicRouteModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();
