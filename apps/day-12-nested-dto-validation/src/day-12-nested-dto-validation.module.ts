@@ -4,4 +4,4 @@ import { PostsModule } from './posts/posts.module';
 @Module({
   imports: [PostsModule],
 })
-export class Day10NestedDtoValidationModule {}
+export class Day12NestedDtoValidationModule {}

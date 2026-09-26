@@ -92,15 +92,6 @@
         "tsConfigPath": "apps/day-10-dynamic-route/tsconfig.app.json"
       }
     },
-    "day-10-nested-dto-validation": {
-      "type": "application",
-      "root": "apps/day-10-nested-dto-validation",
-      "entryFile": "main",
-      "sourceRoot": "apps/day-10-nested-dto-validation/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/day-10-nested-dto-validation/tsconfig.app.json"
-      }
-    },
     "day-11-cors": {
       "type": "application",
       "root": "apps/day-11-cors",
@@ -119,13 +110,13 @@
         "tsConfigPath": "apps/day-12-array-dto-validation/tsconfig.app.json"
       }
     },
-    "day-13-typeorm-entities": {
+    "day-12-nested-dto-validation": {
       "type": "application",
-      "root": "apps/day-13-typeorm-entities",
+      "root": "apps/day-12-nested-dto-validation",
       "entryFile": "main",
-      "sourceRoot": "apps/day-13-typeorm-entities/src",
+      "sourceRoot": "apps/day-12-nested-dto-validation/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-13-typeorm-entities/tsconfig.app.json"
+        "tsConfigPath": "apps/day-12-nested-dto-validation/tsconfig.app.json"
       }
     },
     "day-13-validation-transform": {
@@ -198,6 +189,15 @@
       "sourceRoot": "apps/day-19-request-lifecycle/src",
       "compilerOptions": {
         "tsConfigPath": "apps/day-19-request-lifecycle/tsconfig.app.json"
+      }
+    },
+    "day-19-typeorm-entities": {
+      "type": "application",
+      "root": "apps/day-19-typeorm-entities",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-19-typeorm-entities/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-19-typeorm-entities/tsconfig.app.json"
       }
     },
     "day-20-config-outside-di": {
