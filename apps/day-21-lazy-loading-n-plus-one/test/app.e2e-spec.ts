@@ -1,14 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { Day15LazyLoadingNPlusOneModule } from './../src/day-15-lazy-loading-n-plus-one.module';
+import { Day21LazyLoadingNPlusOneModule } from './../src/day-21-lazy-loading-n-plus-one.module';
 
-describe('Day15LazyLoadingNPlusOneController (e2e)', () => {
+describe('Day21LazyLoadingNPlusOneController (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [Day15LazyLoadingNPlusOneModule],
+      imports: [Day21LazyLoadingNPlusOneModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();

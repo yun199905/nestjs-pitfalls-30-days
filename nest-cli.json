@@ -137,15 +137,6 @@
         "tsConfigPath": "apps/day-14-typeorm-for-feature/tsconfig.app.json"
       }
     },
-    "day-15-lazy-loading-n-plus-one": {
-      "type": "application",
-      "root": "apps/day-15-lazy-loading-n-plus-one",
-      "entryFile": "main",
-      "sourceRoot": "apps/day-15-lazy-loading-n-plus-one/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/day-15-lazy-loading-n-plus-one/tsconfig.app.json"
-      }
-    },
     "day-15-query-param-array": {
       "type": "application",
       "root": "apps/day-15-query-param-array",
@@ -216,6 +207,15 @@
       "sourceRoot": "apps/day-06-env-joi-validation/src",
       "compilerOptions": {
         "tsConfigPath": "apps/day-06-env-joi-validation/tsconfig.app.json"
+      }
+    },
+    "day-21-lazy-loading-n-plus-one": {
+      "type": "application",
+      "root": "apps/day-21-lazy-loading-n-plus-one",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-21-lazy-loading-n-plus-one/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-21-lazy-loading-n-plus-one/tsconfig.app.json"
       }
     },
     "day-22-multi-env-config": {

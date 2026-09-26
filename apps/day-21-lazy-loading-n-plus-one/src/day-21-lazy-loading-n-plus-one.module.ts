@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Day15LazyLoadingNPlusOneController } from './day-15-lazy-loading-n-plus-one.controller';
-import { Day15LazyLoadingNPlusOneService } from './day-15-lazy-loading-n-plus-one.service';
+import { Day21LazyLoadingNPlusOneController } from './day-21-lazy-loading-n-plus-one.controller';
+import { Day21LazyLoadingNPlusOneService } from './day-21-lazy-loading-n-plus-one.service';
 import { UsersModule } from './users/users.module';
 
 @Module({
@@ -16,7 +16,7 @@ import { UsersModule } from './users/users.module';
     }),
     UsersModule,
   ],
-  controllers: [Day15LazyLoadingNPlusOneController],
-  providers: [Day15LazyLoadingNPlusOneService],
+  controllers: [Day21LazyLoadingNPlusOneController],
+  providers: [Day21LazyLoadingNPlusOneService],
 })
-export class Day15LazyLoadingNPlusOneModule {}
+export class Day21LazyLoadingNPlusOneModule {}
