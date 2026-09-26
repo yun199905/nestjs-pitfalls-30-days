@@ -119,15 +119,6 @@
         "tsConfigPath": "apps/day-14-nested-dto-validation/tsconfig.app.json"
       }
     },
-    "day-15-query-param-array": {
-      "type": "application",
-      "root": "apps/day-15-query-param-array",
-      "entryFile": "main",
-      "sourceRoot": "apps/day-15-query-param-array/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/day-15-query-param-array/tsconfig.app.json"
-      }
-    },
     "day-16-boolean-transform": {
       "type": "application",
       "root": "apps/day-16-boolean-transform",
@@ -135,6 +126,15 @@
       "sourceRoot": "apps/day-16-boolean-transform/src",
       "compilerOptions": {
         "tsConfigPath": "apps/day-16-boolean-transform/tsconfig.app.json"
+      }
+    },
+    "day-17-query-param-array": {
+      "type": "application",
+      "root": "apps/day-17-query-param-array",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-17-query-param-array/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-17-query-param-array/tsconfig.app.json"
       }
     },
     "day-19-typeorm-entities": {

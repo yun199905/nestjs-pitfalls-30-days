@@ -4,4 +4,4 @@ import { PostsModule } from './posts/posts.module';
 @Module({
   imports: [PostsModule],
 })
-export class Day15QueryParamArrayModule {}
+export class Day17QueryParamArrayModule {}
