@@ -119,15 +119,6 @@
         "tsConfigPath": "apps/day-14-nested-dto-validation/tsconfig.app.json"
       }
     },
-    "day-14-typeorm-for-feature": {
-      "type": "application",
-      "root": "apps/day-14-typeorm-for-feature",
-      "entryFile": "main",
-      "sourceRoot": "apps/day-14-typeorm-for-feature/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/day-14-typeorm-for-feature/tsconfig.app.json"
-      }
-    },
     "day-15-query-param-array": {
       "type": "application",
       "root": "apps/day-15-query-param-array",
