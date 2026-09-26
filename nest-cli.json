@@ -101,15 +101,6 @@
         "tsConfigPath": "apps/day-11-cors/tsconfig.app.json"
       }
     },
-    "day-12-array-dto-validation": {
-      "type": "application",
-      "root": "apps/day-12-array-dto-validation",
-      "entryFile": "main",
-      "sourceRoot": "apps/day-12-array-dto-validation/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/day-12-array-dto-validation/tsconfig.app.json"
-      }
-    },
     "day-12-nested-dto-validation": {
       "type": "application",
       "root": "apps/day-12-nested-dto-validation",
