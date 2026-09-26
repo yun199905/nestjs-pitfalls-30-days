@@ -18,7 +18,7 @@
 > 延伸地雷：如果連 `UsersModule` 裡的 `TypeOrmModule.forFeature([User])` 都忘了，Nest 會在建立 `UsersService` 時找不到 `UserRepository`，應用程式無法啟動。這是 Repository provider 沒有註冊的 DI 錯誤，和本題查詢時才出現的 `EntityMetadataNotFoundError` 不同。程式碼中的 `users.module.ts` 已在對應位置留下切換用註解。
 
 ### 2. 動手修復
-請打開 `src/day-13-typeorm-entities.module.ts`：
+請打開 `src/day-19-typeorm-entities.module.ts`：
 
 1. 找到 `TypeOrmModule.forRoot({ ... })` 的設定區塊。
 2. 在設定中補上這行屬性：
@@ -39,7 +39,7 @@
 
 ### 步驟一：切換成 Glob 設定
 
-打開 `src/day-13-typeorm-entities.module.ts`，把目前示範用的這一行註解掉：
+打開 `src/day-19-typeorm-entities.module.ts`，把目前示範用的這一行註解掉：
 
 ```typescript
 entities: [],
@@ -56,21 +56,21 @@ entities: [__dirname + '/**/*.entity{.ts,.js}'],
 在專案根目錄執行：
 
 ```bash
-npx nest build day-13-typeorm-entities
+npx nest build day-19-typeorm-entities
 ```
 
 ### 步驟三：證明 bundle 裡沒有獨立的 entity 檔
 
 ```bash
-find dist/apps/day-13-typeorm-entities -iname '*.entity*'
+find dist/apps/day-19-typeorm-entities -iname '*.entity*'
 ```
 
-這個指令不會有任何輸出——雖然原始碼 `src/users/user.entity.ts` 確實存在，但打包後 `__dirname` 指向的 `dist/apps/day-13-typeorm-entities` 目錄下只有一支 `main.js`，`User` entity 的程式碼已經被內嵌進去，Glob 樣式自然一個檔案都比對不到。
+這個指令不會有任何輸出——雖然原始碼 `src/users/user.entity.ts` 確實存在，但打包後 `__dirname` 指向的 `dist/apps/day-19-typeorm-entities` 目錄下只有一支 `main.js`，`User` entity 的程式碼已經被內嵌進去，Glob 樣式自然一個檔案都比對不到。
 
 ### 步驟四：執行打包產物並觸發查詢
 
 ```bash
-node dist/apps/day-13-typeorm-entities/main.js
+node dist/apps/day-19-typeorm-entities/main.js
 ```
 
 另開一個終端機：
@@ -93,4 +93,4 @@ EntityMetadataNotFoundError: No metadata for "User" was found.
 
 ### 還原
 
-測試完後，記得把 `day-13-typeorm-entities.module.ts` 改回本篇一開始示範用的 `entities: []`，避免影響前面三個步驟或既有的測試。
+測試完後，記得把 `day-19-typeorm-entities.module.ts` 改回本篇一開始示範用的 `entities: []`，避免影響前面三個步驟或既有的測試。

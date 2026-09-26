@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Day13TypeormEntitiesController } from './day-13-typeorm-entities.controller';
-import { Day13TypeormEntitiesService } from './day-13-typeorm-entities.service';
+import { Day19TypeormEntitiesController } from './day-19-typeorm-entities.controller';
+import { Day19TypeormEntitiesService } from './day-19-typeorm-entities.service';
 import { UsersModule } from './users/users.module';
 // import { User } from './users/user.entity';
 
@@ -22,7 +22,7 @@ import { UsersModule } from './users/users.module';
     }),
     UsersModule,
   ],
-  controllers: [Day13TypeormEntitiesController],
-  providers: [Day13TypeormEntitiesService],
+  controllers: [Day19TypeormEntitiesController],
+  providers: [Day19TypeormEntitiesService],
 })
-export class Day13TypeormEntitiesModule {}
+export class Day19TypeormEntitiesModule {}

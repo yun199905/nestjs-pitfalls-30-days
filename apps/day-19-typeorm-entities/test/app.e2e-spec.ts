@@ -1,14 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
-import { Day13TypeormEntitiesModule } from './../src/day-13-typeorm-entities.module';
+import { Day19TypeormEntitiesModule } from './../src/day-19-typeorm-entities.module';
 
-describe('Day13TypeormEntitiesController (e2e)', () => {
+describe('Day19TypeormEntitiesController (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [Day13TypeormEntitiesModule],
+      imports: [Day19TypeormEntitiesModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();
