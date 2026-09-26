@@ -56,13 +56,13 @@
         "tsConfigPath": "apps/day-04-use-factory-inject/tsconfig.app.json"
       }
     },
-    "day-07-dto-runtime-metadata": {
+    "day-12-dto-runtime-metadata": {
       "type": "application",
-      "root": "apps/day-07-dto-runtime-metadata",
+      "root": "apps/day-12-dto-runtime-metadata",
       "entryFile": "main",
-      "sourceRoot": "apps/day-07-dto-runtime-metadata/src",
+      "sourceRoot": "apps/day-12-dto-runtime-metadata/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-07-dto-runtime-metadata/tsconfig.app.json"
+        "tsConfigPath": "apps/day-12-dto-runtime-metadata/tsconfig.app.json"
       }
     },
     "day-08-request-scope-chain-reaction": {

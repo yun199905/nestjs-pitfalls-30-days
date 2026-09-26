@@ -1,17 +1,17 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { Day07DtoRuntimeMetadataController } from './day-07-dto-runtime-metadata.controller';
+import { Day12DtoRuntimeMetadataController } from './day-12-dto-runtime-metadata.controller';
 
-describe('Day07DtoRuntimeMetadataController', () => {
-  let day07DtoRuntimeMetadataController: Day07DtoRuntimeMetadataController;
+describe('Day12DtoRuntimeMetadataController', () => {
+  let day07DtoRuntimeMetadataController: Day12DtoRuntimeMetadataController;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
-      controllers: [Day07DtoRuntimeMetadataController],
+      controllers: [Day12DtoRuntimeMetadataController],
     }).compile();
 
     day07DtoRuntimeMetadataController =
-      app.get<Day07DtoRuntimeMetadataController>(
-        Day07DtoRuntimeMetadataController,
+      app.get<Day12DtoRuntimeMetadataController>(
+        Day12DtoRuntimeMetadataController,
       );
   });
 

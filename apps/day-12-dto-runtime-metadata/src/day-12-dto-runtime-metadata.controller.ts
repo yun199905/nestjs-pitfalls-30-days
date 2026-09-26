@@ -14,7 +14,7 @@ interface CreatePostBody {
 }
 
 @Controller('posts')
-export class Day07DtoRuntimeMetadataController {
+export class Day12DtoRuntimeMetadataController {
   @Post('with-interface')
   @UsePipes(new ValidationPipe({ transform: true }))
   createWithInterface(@Body() body: CreatePostBody) {

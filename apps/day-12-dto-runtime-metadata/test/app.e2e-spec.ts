@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
-import { Day07DtoRuntimeMetadataModule } from './../src/day-07-dto-runtime-metadata.module';
+import { Day12DtoRuntimeMetadataModule } from './../src/day-12-dto-runtime-metadata.module';
 
-describe('Day07DtoRuntimeMetadataController (e2e)', () => {
+describe('Day12DtoRuntimeMetadataController (e2e)', () => {
   let app: INestApplication;
   const invalidPayload = {
     title: '',
@@ -19,7 +19,7 @@ describe('Day07DtoRuntimeMetadataController (e2e)', () => {
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [Day07DtoRuntimeMetadataModule],
+      imports: [Day12DtoRuntimeMetadataModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();
