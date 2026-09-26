@@ -110,15 +110,6 @@
         "tsConfigPath": "apps/day-11-cors/tsconfig.app.json"
       }
     },
-    "day-11-query-param-array": {
-      "type": "application",
-      "root": "apps/day-11-query-param-array",
-      "entryFile": "main",
-      "sourceRoot": "apps/day-11-query-param-array/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/day-11-query-param-array/tsconfig.app.json"
-      }
-    },
     "day-12-array-dto-validation": {
       "type": "application",
       "root": "apps/day-12-array-dto-validation",
@@ -135,6 +126,15 @@
       "sourceRoot": "apps/day-13-typeorm-entities/src",
       "compilerOptions": {
         "tsConfigPath": "apps/day-13-typeorm-entities/tsconfig.app.json"
+      }
+    },
+    "day-13-validation-transform": {
+      "type": "application",
+      "root": "apps/day-13-validation-transform",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-13-validation-transform/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-13-validation-transform/tsconfig.app.json"
       }
     },
     "day-14-boolean-transform": {
@@ -162,6 +162,15 @@
       "sourceRoot": "apps/day-15-lazy-loading-n-plus-one/src",
       "compilerOptions": {
         "tsConfigPath": "apps/day-15-lazy-loading-n-plus-one/tsconfig.app.json"
+      }
+    },
+    "day-15-query-param-array": {
+      "type": "application",
+      "root": "apps/day-15-query-param-array",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-15-query-param-array/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-15-query-param-array/tsconfig.app.json"
       }
     },
     "day-16-tbd": {

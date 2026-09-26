@@ -1,14 +1,14 @@
 import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import request from 'supertest';
-import { Day11QueryParamArrayModule } from './../src/day-11-query-param-array.module';
+import { Day15QueryParamArrayModule } from './../src/day-15-query-param-array.module';
 
-describe('Day11QueryParamArrayController (e2e)', () => {
+describe('Day15QueryParamArrayController (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [Day11QueryParamArrayModule],
+      imports: [Day15QueryParamArrayModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();
