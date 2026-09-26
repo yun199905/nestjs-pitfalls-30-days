@@ -101,15 +101,6 @@
         "tsConfigPath": "apps/day-11-cors/tsconfig.app.json"
       }
     },
-    "day-12-nested-dto-validation": {
-      "type": "application",
-      "root": "apps/day-12-nested-dto-validation",
-      "entryFile": "main",
-      "sourceRoot": "apps/day-12-nested-dto-validation/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/day-12-nested-dto-validation/tsconfig.app.json"
-      }
-    },
     "day-13-validation-transform": {
       "type": "application",
       "root": "apps/day-13-validation-transform",
@@ -146,31 +137,13 @@
         "tsConfigPath": "apps/day-15-query-param-array/tsconfig.app.json"
       }
     },
-    "day-16-tbd": {
+    "day-16-nested-dto-validation": {
       "type": "application",
-      "root": "apps/day-16-tbd",
+      "root": "apps/day-16-nested-dto-validation",
       "entryFile": "main",
-      "sourceRoot": "apps/day-16-tbd/src",
+      "sourceRoot": "apps/day-16-nested-dto-validation/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-16-tbd/tsconfig.app.json"
-      }
-    },
-    "day-18-transaction-rollback": {
-      "type": "application",
-      "root": "apps/day-18-transaction-rollback",
-      "entryFile": "main",
-      "sourceRoot": "apps/day-18-transaction-rollback/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/day-18-transaction-rollback/tsconfig.app.json"
-      }
-    },
-    "day-19-request-lifecycle": {
-      "type": "application",
-      "root": "apps/day-19-request-lifecycle",
-      "entryFile": "main",
-      "sourceRoot": "apps/day-19-request-lifecycle/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/day-19-request-lifecycle/tsconfig.app.json"
+        "tsConfigPath": "apps/day-16-nested-dto-validation/tsconfig.app.json"
       }
     },
     "day-19-typeorm-entities": {
@@ -234,6 +207,15 @@
       "sourceRoot": "apps/day-23-multer-file-upload/src",
       "compilerOptions": {
         "tsConfigPath": "apps/day-23-multer-file-upload/tsconfig.app.json"
+      }
+    },
+    "day-23-transaction-rollback": {
+      "type": "application",
+      "root": "apps/day-23-transaction-rollback",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-23-transaction-rollback/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-23-transaction-rollback/tsconfig.app.json"
       }
     },
     "day-24-swagger-api-property": {

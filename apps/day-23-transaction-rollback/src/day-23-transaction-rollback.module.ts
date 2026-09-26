@@ -24,7 +24,7 @@ import { UsersModule } from './users/users.module';
       port: 5432,
       username: 'postgres',
       password: 'postgres',
-      database: 'day18',
+      database: 'day23',
       synchronize: true,
       autoLoadEntities: true,
       logging: true,
@@ -37,4 +37,4 @@ import { UsersModule } from './users/users.module';
     PostsModule,
   ],
 })
-export class Day18TransactionRollbackModule {}
+export class Day23TransactionRollbackModule {}

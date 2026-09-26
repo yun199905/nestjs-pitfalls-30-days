@@ -1,12 +1,12 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { Day18TransactionRollbackModule } from './day-18-transaction-rollback.module';
+import { Day23TransactionRollbackModule } from './day-23-transaction-rollback.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(Day18TransactionRollbackModule);
+  const app = await NestFactory.create(Day23TransactionRollbackModule);
 
   const config = new DocumentBuilder()
-    .setTitle('Day 18｜交易邊界與 rollback')
+    .setTitle('Day 23｜交易邊界與 rollback')
     .setDescription(
       'transaction() 不會自動把 EntityManager 傳給其他 service。四個 posts 端點分別示範：' +
         '使用預設 Repository 的地雷、傳遞 EntityManager、手動 QueryRunner，以及忘記 release()。' +

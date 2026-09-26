@@ -1,14 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, ValidationPipe } from '@nestjs/common';
 import request from 'supertest';
-import { Day12NestedDtoValidationModule } from './../src/day-12-nested-dto-validation.module';
+import { Day16NestedDtoValidationModule } from './../src/day-16-nested-dto-validation.module';
 
-describe('Day12NestedDtoValidationController (e2e)', () => {
+describe('Day16NestedDtoValidationController (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [Day12NestedDtoValidationModule],
+      imports: [Day16NestedDtoValidationModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();

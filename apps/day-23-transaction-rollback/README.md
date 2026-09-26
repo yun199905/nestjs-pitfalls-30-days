@@ -15,7 +15,7 @@
 
 ## 資料庫切換方式
 
-兩組設定都放在 `src/day-18-transaction-rollback.module.ts`，但任一時間只能啟用一組。
+兩組設定都放在 `src/day-23-transaction-rollback.module.ts`，但任一時間只能啟用一組。
 
 專案預設註解 SQLite、啟用 PostgreSQL：
 
@@ -66,7 +66,7 @@ TypeOrmModule.forRoot({
 SQLite 使用記憶體資料庫，不需要啟動 Docker：
 
 ```bash
-npx nest start day-18-transaction-rollback
+npx nest start day-23-transaction-rollback
 ```
 
 應用程式啟動時會建立作者 YUN，初始 `postCount` 是 0：
@@ -112,10 +112,10 @@ TypeORM 的 SQLite driver 在同一個 DataSource 內重用 QueryRunner，因此
 停止 NestJS，將模組恢復成 SQLite 註解、PostgreSQL 啟用，再啟動資料庫：
 
 ```bash
-cd apps/day-18-transaction-rollback
+cd apps/day-23-transaction-rollback
 docker compose up -d
 cd ../..
-npx nest start day-18-transaction-rollback
+npx nest start day-23-transaction-rollback
 ```
 
 執行完全相同的錯誤版本：
@@ -243,7 +243,7 @@ curl -X POST http://localhost:3000/posts/leaky-query-runner
 e2e 會根據實際使用的 driver 判斷錯誤版本預期值，因此切換註解後可以執行同一組測試：
 
 ```bash
-npx jest --config apps/day-18-transaction-rollback/test/jest-e2e.json --runInBand
+npx jest --config apps/day-23-transaction-rollback/test/jest-e2e.json --runInBand
 ```
 
 預期結果：
@@ -259,6 +259,6 @@ SQLite 測試不需要 Docker；PostgreSQL 測試前必須先執行 `docker comp
 ## 7. 收尾
 
 ```bash
-cd apps/day-18-transaction-rollback
+cd apps/day-23-transaction-rollback
 docker compose down -v
 ```

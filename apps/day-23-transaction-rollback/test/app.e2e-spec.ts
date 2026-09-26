@@ -2,7 +2,7 @@ import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import request from 'supertest';
 import { DataSource } from 'typeorm';
-import { Day18TransactionRollbackModule } from './../src/day-18-transaction-rollback.module';
+import { Day23TransactionRollbackModule } from './../src/day-23-transaction-rollback.module';
 import { Post } from './../src/posts/post.entity';
 
 interface UserResponse {
@@ -20,14 +20,14 @@ const getUsers = async (app: INestApplication): Promise<UserResponse[]> => {
 };
 
 // 這支測試需要 Postgres 起著：
-//   cd apps/day-18-transaction-rollback && docker compose up -d
-describe('Day18TransactionRollbackModule (e2e)', () => {
+//   cd apps/day-23-transaction-rollback && docker compose up -d
+describe('Day23TransactionRollbackModule (e2e)', () => {
   let app: INestApplication;
   let dataSource: DataSource;
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [Day18TransactionRollbackModule],
+      imports: [Day23TransactionRollbackModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();
