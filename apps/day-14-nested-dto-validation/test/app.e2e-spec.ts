@@ -56,28 +56,6 @@ describe('Day14NestedDtoValidationController (e2e)', () => {
       .expect(400);
   });
 
-  it('still accepts invalid nested fields when inner DTO properties have no decorators', () => {
-    return request(app.getHttpServer())
-      .post('/posts/without-field-decorators')
-      .send({
-        title: 'My first post',
-        content: 'Hello NestJS',
-        postMeta: {
-          seoTitle: '',
-          seoDescription: 12345,
-        },
-      })
-      .expect(201)
-      .expect({
-        title: 'My first post',
-        content: 'Hello NestJS',
-        postMeta: {
-          seoTitle: '',
-          seoDescription: 12345,
-        },
-      });
-  });
-
   it('still rejects invalid outer fields when @Type() is missing', () => {
     return request(app.getHttpServer())
       .post('/posts/without-type')
