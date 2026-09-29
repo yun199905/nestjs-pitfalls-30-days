@@ -119,6 +119,15 @@
         "tsConfigPath": "apps/day-14-nested-dto-validation/tsconfig.app.json"
       }
     },
+    "day-15-is-optional": {
+      "type": "application",
+      "root": "apps/day-15-is-optional",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-15-is-optional/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-15-is-optional/tsconfig.app.json"
+      }
+    },
     "day-16-boolean-transform": {
       "type": "application",
       "root": "apps/day-16-boolean-transform",
