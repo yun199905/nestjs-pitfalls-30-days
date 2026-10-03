@@ -155,13 +155,13 @@
         "tsConfigPath": "apps/day-19-typeorm-entities/tsconfig.app.json"
       }
     },
-    "day-20-config-outside-di": {
+    "day-20-typeorm-save-extra-select": {
       "type": "application",
-      "root": "apps/day-20-config-outside-di",
+      "root": "apps/day-20-typeorm-save-extra-select",
       "entryFile": "main",
-      "sourceRoot": "apps/day-20-config-outside-di/src",
+      "sourceRoot": "apps/day-20-typeorm-save-extra-select/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-20-config-outside-di/tsconfig.app.json"
+        "tsConfigPath": "apps/day-20-typeorm-save-extra-select/tsconfig.app.json"
       }
     },
     "day-05-config-module-scope": {
@@ -200,13 +200,13 @@
         "tsConfigPath": "apps/day-22-multi-env-config/tsconfig.app.json"
       }
     },
-    "day-23-multer-file-upload": {
+    "day-18-multer-file-upload": {
       "type": "application",
-      "root": "apps/day-23-multer-file-upload",
+      "root": "apps/day-18-multer-file-upload",
       "entryFile": "main",
-      "sourceRoot": "apps/day-23-multer-file-upload/src",
+      "sourceRoot": "apps/day-18-multer-file-upload/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-23-multer-file-upload/tsconfig.app.json"
+        "tsConfigPath": "apps/day-18-multer-file-upload/tsconfig.app.json"
       }
     },
     "day-23-transaction-rollback": {
