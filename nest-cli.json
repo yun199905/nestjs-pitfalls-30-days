@@ -191,13 +191,13 @@
         "tsConfigPath": "apps/day-21-lazy-loading-n-plus-one/tsconfig.app.json"
       }
     },
-    "day-22-multi-env-config": {
+    "day-22-typeorm-relation-pagination": {
       "type": "application",
-      "root": "apps/day-22-multi-env-config",
+      "root": "apps/day-22-typeorm-relation-pagination",
       "entryFile": "main",
-      "sourceRoot": "apps/day-22-multi-env-config/src",
+      "sourceRoot": "apps/day-22-typeorm-relation-pagination/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-22-multi-env-config/tsconfig.app.json"
+        "tsConfigPath": "apps/day-22-typeorm-relation-pagination/tsconfig.app.json"
       }
     },
     "day-18-multer-file-upload": {
@@ -227,6 +227,15 @@
         "tsConfigPath": "apps/day-24-swagger-api-property/tsconfig.app.json"
       }
     },
+    "day-24-response-handling": {
+      "type": "application",
+      "root": "apps/day-24-response-handling",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-24-response-handling/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-24-response-handling/tsconfig.app.json"
+      }
+    },
     "day-25-swagger-complex-types": {
       "type": "application",
       "root": "apps/day-25-swagger-complex-types",
@@ -234,6 +243,15 @@
       "sourceRoot": "apps/day-25-swagger-complex-types/src",
       "compilerOptions": {
         "tsConfigPath": "apps/day-25-swagger-complex-types/tsconfig.app.json"
+      }
+    },
+    "day-25-interceptor-next-handle": {
+      "type": "application",
+      "root": "apps/day-25-interceptor-next-handle",
+      "entryFile": "main",
+      "sourceRoot": "apps/day-25-interceptor-next-handle/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/day-25-interceptor-next-handle/tsconfig.app.json"
       }
     },
     "day-26-json-stringify-entity-cycle": {
