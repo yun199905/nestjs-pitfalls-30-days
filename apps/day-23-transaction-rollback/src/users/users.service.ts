@@ -38,10 +38,6 @@ export class UsersService implements OnModuleInit {
     return this.usersRepository.find({ order: { id: 'ASC' } });
   }
 
-  getDemoAuthor() {
-    return this.usersRepository.findOneByOrFail({ name: DEMO_AUTHOR_NAME });
-  }
-
   // 練習重設用：PostsService 會先刪除 Post，才能安全重建固定作者。
   async resetDemoUser() {
     await this.usersRepository.createQueryBuilder().delete().execute();

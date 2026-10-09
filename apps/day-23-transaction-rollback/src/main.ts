@@ -1,9 +1,11 @@
+import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { Day23TransactionRollbackModule } from './day-23-transaction-rollback.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(Day23TransactionRollbackModule);
+  app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder()
     .setTitle('Day 23｜交易邊界與 rollback')

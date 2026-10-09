@@ -79,10 +79,14 @@ curl http://localhost:3000/users
 [{ "id": 1, "name": "YUN", "postCount": 0 }]
 ```
 
+以下範例以作者 ID `1` 示範；如果查詢結果的 ID 不同，請改用實際值。練習題將 `authorId` 放在 request body，以避免引入完整認證流程；正式系統通常應從已驗證的登入身分取得作者 ID。
+
 執行錯誤版本：
 
 ```bash
-curl -X POST http://localhost:3000/posts/broken-boundary
+curl -X POST http://localhost:3000/posts/broken-boundary \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"第一篇文章","authorId":1}'
 curl http://localhost:3000/users
 ```
 
@@ -92,11 +96,11 @@ curl http://localhost:3000/users
 
 ```typescript
 await this.dataSource.transaction(async (manager) => {
-  await this.usersService.incrementPostCount(author.id);
+  await this.usersService.incrementPostCount(authorId);
 
   await manager.save(Post, {
-    title: '第一篇文章',
-    author: { id: author.id },
+    title,
+    author: { id: authorId },
   });
 
   throw new Error('模擬發文後續流程失敗');
@@ -121,7 +125,9 @@ npx nest start day-23-transaction-rollback
 執行完全相同的錯誤版本：
 
 ```bash
-curl -X POST http://localhost:3000/posts/broken-boundary
+curl -X POST http://localhost:3000/posts/broken-boundary \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"第一篇文章","authorId":1}'
 curl http://localhost:3000/users
 ```
 
@@ -160,14 +166,17 @@ TypeORM logger 沒有標示連線身分。`UPDATE` 排在 `START TRANSACTION` �
 
 ```bash
 curl -X DELETE http://localhost:3000/posts/demo-data
-curl -X POST http://localhost:3000/posts/pass-manager
+curl http://localhost:3000/users
+curl -X POST http://localhost:3000/posts/pass-manager \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"第一篇文章","authorId":1}'
 curl http://localhost:3000/users
 ```
 
 修正版將 callback 收到的 manager 傳進 `UsersService`：
 
 ```typescript
-await this.usersService.incrementPostCount(author.id, manager);
+await this.usersService.incrementPostCount(authorId, manager);
 ```
 
 `incrementPostCount()` 便會改用 transaction 專用的 Repository：
@@ -184,7 +193,10 @@ const repository = manager ? manager.getRepository(User) : this.usersRepository;
 
 ```bash
 curl -X DELETE http://localhost:3000/posts/demo-data
-curl -X POST http://localhost:3000/posts/query-runner
+curl http://localhost:3000/users
+curl -X POST http://localhost:3000/posts/query-runner \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"第一篇文章","authorId":1}'
 curl http://localhost:3000/users
 ```
 
@@ -196,11 +208,11 @@ await queryRunner.connect();
 await queryRunner.startTransaction();
 
 try {
-  await this.usersService.incrementPostCount(author.id, queryRunner.manager);
+  await this.usersService.incrementPostCount(authorId, queryRunner.manager);
 
   await queryRunner.manager.save(Post, {
-    title: '第一篇文章',
-    author: { id: author.id },
+    title,
+    author: { id: authorId },
   });
 
   throw new Error('模擬發文後續流程失敗');
@@ -229,9 +241,15 @@ finally {
 本練習將 PostgreSQL pool 上限設為 2。連續呼叫：
 
 ```bash
-curl -X POST http://localhost:3000/posts/leaky-query-runner
-curl -X POST http://localhost:3000/posts/leaky-query-runner
-curl -X POST http://localhost:3000/posts/leaky-query-runner
+curl -X POST http://localhost:3000/posts/leaky-query-runner \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"第一篇文章","authorId":1}'
+curl -X POST http://localhost:3000/posts/leaky-query-runner \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"第一篇文章","authorId":1}'
+curl -X POST http://localhost:3000/posts/leaky-query-runner \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"第一篇文章","authorId":1}'
 ```
 
 前兩次各占住一條連線，第三次會等待可用連線。`rollbackTransaction()` 只撤銷資料，不會將 QueryRunner 持有的連線歸還 pool。

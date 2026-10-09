@@ -1,4 +1,4 @@
-import { INestApplication } from '@nestjs/common';
+import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import request from 'supertest';
 import { DataSource } from 'typeorm';
@@ -19,6 +19,11 @@ const getUsers = async (app: INestApplication): Promise<UserResponse[]> => {
   return response.body as UserResponse[];
 };
 
+const createPostBody = (authorId: number) => ({
+  title: '第一篇文章',
+  authorId,
+});
+
 // 這支測試需要 Postgres 起著：
 //   cd apps/day-23-transaction-rollback && docker compose up -d
 describe('Day23TransactionRollbackModule (e2e)', () => {
@@ -31,6 +36,7 @@ describe('Day23TransactionRollbackModule (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
+    app.useGlobalPipes(new ValidationPipe());
     await app.init();
     dataSource = moduleFixture.get(DataSource);
   });
@@ -46,8 +52,11 @@ describe('Day23TransactionRollbackModule (e2e)', () => {
   });
 
   it('地雷：資料庫連線模型會影響錯誤交易邊界的觀察結果', async () => {
+    const [author] = await getUsers(app);
+
     await request(app.getHttpServer() as never)
       .post('/posts/broken-boundary')
+      .send(createPostBody(author.id))
       .expect(500);
 
     const users = await getUsers(app);
@@ -62,8 +71,11 @@ describe('Day23TransactionRollbackModule (e2e)', () => {
   });
 
   it('解法一：傳入 EntityManager 後，postCount 與 Post 會一起回滾', async () => {
+    const [author] = await getUsers(app);
+
     await request(app.getHttpServer() as never)
       .post('/posts/pass-manager')
+      .send(createPostBody(author.id))
       .expect(500);
 
     const users = await getUsers(app);
@@ -73,13 +85,29 @@ describe('Day23TransactionRollbackModule (e2e)', () => {
   });
 
   it('解法二：QueryRunner 的 manager 讓計數與 Post 一起回滾', async () => {
+    const [author] = await getUsers(app);
+
     await request(app.getHttpServer() as never)
       .post('/posts/query-runner')
+      .send(createPostBody(author.id))
       .expect(500);
 
     const users = await getUsers(app);
     expect(users).toHaveLength(1);
     expect(users[0]).toMatchObject({ name: 'YUN', postCount: 0 });
     expect(await dataSource.getRepository(Post).count()).toBe(0);
+  });
+
+  it.each([
+    ['缺少 title', { authorId: 1 }],
+    ['缺少 authorId', { title: '第一篇文章' }],
+    ['title 為空字串', { title: '', authorId: 1 }],
+    ['authorId 不是整數', { title: '第一篇文章', authorId: 1.5 }],
+    ['authorId 小於 1', { title: '第一篇文章', authorId: 0 }],
+  ])('輸入驗證：%s 時回傳 400', async (_caseName, body) => {
+    await request(app.getHttpServer() as never)
+      .post('/posts/pass-manager')
+      .send(body)
+      .expect(400);
   });
 });

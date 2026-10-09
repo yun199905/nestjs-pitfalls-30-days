@@ -1,5 +1,6 @@
-import { Controller, Delete, Post as HttpPost } from '@nestjs/common';
+import { Body, Controller, Delete, Post as HttpPost } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { CreatePostDto } from './dto/create-post.dto';
 import { PostsService } from './posts.service';
 
 @ApiTags('posts')
@@ -15,8 +16,8 @@ export class PostsController {
       '跑完用 GET /users 觀察結果。',
   })
   @HttpPost('broken-boundary')
-  publishBrokenBoundary() {
-    return this.postsService.publishBrokenBoundary();
+  createPostWithBrokenBoundary(@Body() body: CreatePostDto) {
+    return this.postsService.publishBrokenBoundary(body);
   }
 
   @ApiOperation({
@@ -26,8 +27,8 @@ export class PostsController {
       'GET /users 的 postCount 會維持 0。',
   })
   @HttpPost('pass-manager')
-  publishPassManager() {
-    return this.postsService.publishPassManager();
+  createPostWithManager(@Body() body: CreatePostDto) {
+    return this.postsService.publishPassManager(body);
   }
 
   @ApiOperation({
@@ -37,8 +38,8 @@ export class PostsController {
       '所有資料庫操作都使用 queryRunner.manager，效果與解法一相同。',
   })
   @HttpPost('query-runner')
-  publishWithQueryRunner() {
-    return this.postsService.publishWithQueryRunner();
+  createPostWithQueryRunner(@Body() body: CreatePostDto) {
+    return this.postsService.publishWithQueryRunner(body);
   }
 
   @ApiOperation({
@@ -48,8 +49,8 @@ export class PostsController {
       '連打三次之後新的請求不會報錯，只會一直卡住等連線。',
   })
   @HttpPost('leaky-query-runner')
-  publishLeakyQueryRunner() {
-    return this.postsService.publishLeakyQueryRunner();
+  createPostWithLeakyQueryRunner(@Body() body: CreatePostDto) {
+    return this.postsService.publishLeakyQueryRunner(body);
   }
 
   @ApiOperation({
