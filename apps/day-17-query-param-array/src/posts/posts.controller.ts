@@ -32,8 +32,11 @@ export class PostsController {
 
   @Get('parse-array-version')
   getTagsWithArrayParsing(
-    @Query('tags', new ParseArrayPipe({ items: String, separator: ',' }))
-    tags: string[],
+    @Query(
+      'tags',
+      new ParseArrayPipe({ items: String, separator: ',', optional: true }),
+    )
+    tags?: string[],
   ) {
     return this.describeTags(tags);
   }
