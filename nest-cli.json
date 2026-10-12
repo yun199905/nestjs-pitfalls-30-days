@@ -218,13 +218,13 @@
         "tsConfigPath": "apps/day-23-transaction-rollback/tsconfig.app.json"
       }
     },
-    "day-24-swagger-api-property": {
+    "day-28-swagger-api-property": {
       "type": "application",
-      "root": "apps/day-24-swagger-api-property",
+      "root": "apps/day-28-swagger-api-property",
       "entryFile": "main",
-      "sourceRoot": "apps/day-24-swagger-api-property/src",
+      "sourceRoot": "apps/day-28-swagger-api-property/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-24-swagger-api-property/tsconfig.app.json"
+        "tsConfigPath": "apps/day-28-swagger-api-property/tsconfig.app.json"
       }
     },
     "day-24-response-handling": {
@@ -236,40 +236,40 @@
         "tsConfigPath": "apps/day-24-response-handling/tsconfig.app.json"
       }
     },
-    "day-25-swagger-complex-types": {
+    "day-29-swagger-complex-types": {
       "type": "application",
-      "root": "apps/day-25-swagger-complex-types",
+      "root": "apps/day-29-swagger-complex-types",
       "entryFile": "main",
-      "sourceRoot": "apps/day-25-swagger-complex-types/src",
+      "sourceRoot": "apps/day-29-swagger-complex-types/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-25-swagger-complex-types/tsconfig.app.json"
+        "tsConfigPath": "apps/day-29-swagger-complex-types/tsconfig.app.json"
       }
     },
-    "day-25-interceptor-next-handle": {
+    "day-25-exclude-plain-object": {
       "type": "application",
-      "root": "apps/day-25-interceptor-next-handle",
+      "root": "apps/day-25-exclude-plain-object",
       "entryFile": "main",
-      "sourceRoot": "apps/day-25-interceptor-next-handle/src",
+      "sourceRoot": "apps/day-25-exclude-plain-object/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-25-interceptor-next-handle/tsconfig.app.json"
+        "tsConfigPath": "apps/day-25-exclude-plain-object/tsconfig.app.json"
       }
     },
-    "day-26-json-stringify-entity-cycle": {
+    "day-27-query-builder-not-executed": {
       "type": "application",
-      "root": "apps/day-26-json-stringify-entity-cycle",
+      "root": "apps/day-27-query-builder-not-executed",
       "entryFile": "main",
-      "sourceRoot": "apps/day-26-json-stringify-entity-cycle/src",
+      "sourceRoot": "apps/day-27-query-builder-not-executed/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-26-json-stringify-entity-cycle/tsconfig.app.json"
+        "tsConfigPath": "apps/day-27-query-builder-not-executed/tsconfig.app.json"
       }
     },
-    "day-27-docker-dist-permission": {
+    "day-26-controller-filter-skips-global": {
       "type": "application",
-      "root": "apps/day-27-docker-dist-permission",
+      "root": "apps/day-26-controller-filter-skips-global",
       "entryFile": "main",
-      "sourceRoot": "apps/day-27-docker-dist-permission/src",
+      "sourceRoot": "apps/day-26-controller-filter-skips-global/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/day-27-docker-dist-permission/tsconfig.app.json"
+        "tsConfigPath": "apps/day-26-controller-filter-skips-global/tsconfig.app.json"
       }
     },
     "day-28-unhandled-promise-reject": {
@@ -279,15 +279,6 @@
       "sourceRoot": "apps/day-28-unhandled-promise-reject/src",
       "compilerOptions": {
         "tsConfigPath": "apps/day-28-unhandled-promise-reject/tsconfig.app.json"
-      }
-    },
-    "day-29-typeorm-synchronize-risk": {
-      "type": "application",
-      "root": "apps/day-29-typeorm-synchronize-risk",
-      "entryFile": "main",
-      "sourceRoot": "apps/day-29-typeorm-synchronize-risk/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/day-29-typeorm-synchronize-risk/tsconfig.app.json"
       }
     },
     "nestjs-pitfalls-30-days": {
