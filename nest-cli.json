@@ -272,15 +272,6 @@
         "tsConfigPath": "apps/day-26-controller-filter-skips-global/tsconfig.app.json"
       }
     },
-    "day-28-unhandled-promise-reject": {
-      "type": "application",
-      "root": "apps/day-28-unhandled-promise-reject",
-      "entryFile": "main",
-      "sourceRoot": "apps/day-28-unhandled-promise-reject/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/day-28-unhandled-promise-reject/tsconfig.app.json"
-      }
-    },
     "nestjs-pitfalls-30-days": {
       "type": "application",
       "root": "apps/nestjs-pitfalls-30-days",
